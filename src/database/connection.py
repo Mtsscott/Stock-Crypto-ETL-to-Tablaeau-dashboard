@@ -1,3 +1,14 @@
+"""
+Database connection management for SQL Server.
+"""
+import os
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
 def get_connection_string() -> str:
     """
     Build SQL Server connection string from environment variables.
@@ -52,10 +63,10 @@ def test_connection():
         engine = get_engine()
         with engine.connect() as conn:
             result = conn.execute(text("SELECT 1"))
-            print("Database connection successful!")
+            print("✓ Database connection successful!")
             return True
     except Exception as e:
-        print(f"Database connection failed: {e}")
+        print(f"✗ Database connection failed: {e}")
         return False
 
 
