@@ -1,0 +1,16 @@
+database:
+  server: localhost
+  database: StockCryptoDB
+  driver: "ODBC Driver 17 for SQL Server"
+
+api:
+  base_url: https://www.alphavantage.co/query
+  rate_limit_seconds: 15
+
+backtesting:
+  starting_capital: 10000
+  commission_pct: 0.001
+
+tickers:
+  stocks: [AAPL, MSFT, GOOGL, AMZN, TSLA, META, NFLX, JPM, NVDA, WMT]
+  crypto: [BTC, ETH, ADA, SOL, XRP, DOGE, LTC, DOT, AVAX, BNB]
